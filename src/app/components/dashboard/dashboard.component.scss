@@ -1,0 +1,36 @@
+:host {
+  mat-card {
+    border: solid 0.5px #1a73e8;
+    margin: 1em;
+  }
+  mat-card-header {
+    background-color: aliceblue;
+    height: 3em;
+    mat-card-title {
+      margin-top: 7px;
+      font-size: small;;
+    }
+    button {
+      background-color: #1a73e8;
+      color: white;
+      float: right;
+      height: 2.5em;
+      padding-bottom: 5px;
+      font-size: small;
+      margin-top: 5px;
+    }
+  }
+  .table-margin {
+    margin: 1em;
+  }
+    .demo-table {
+      width: 100%;
+    }
+    .border {
+      border: solid 1px #1a73e8;
+    }
+    h3 {
+      margin-top:1em;
+      font-weight: bold;
+    }
+}

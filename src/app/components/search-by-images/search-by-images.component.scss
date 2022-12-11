@@ -1,0 +1,69 @@
+:host {
+  .outer-mat-card {
+    width: 90%;
+    height: 33em;
+    margin: 2em;
+    .button {
+      margin-left: 1em;
+    }
+  }
+  .inner-mat-card {
+    height: 26em;
+    align-items: center;
+    width: 30em;
+    margin-top: 0.5em;
+    img{
+      object-fit: fill; /*this makes the image in src fit to the size specified below*/
+      width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+      height: 95%;
+    }
+  }
+  .flex-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    display: inline-block;
+    justify-content: center;
+    margin-top: -8em;
+
+  }
+  .flex-container-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-left: 1em;
+    mat-card {
+      height: 14em;
+      margin-left: 1em ;
+      width: 15em;
+      margin-top: 2em;
+      margin-right: 1em;
+      margin-bottom: 1em;
+      img{
+        object-fit: cover; /*this makes the image in src fit to the size specified below*/
+        width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+        height: 100%;
+      }
+    }
+  }
+  button {
+    background-color: #465a93;
+    color: white;
+  }
+  .search-button {
+    margin-top: 1em;
+    margin-left: 12em;
+  }
+  .image-link {
+    mat-form-field {
+    width: 30em;
+    }
+    button {
+      margin-left: 1em;
+    }
+  }
+  .margin {
+    margin-top: 1em;
+  }
+}

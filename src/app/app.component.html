@@ -1,0 +1,13 @@
+<mat-sidenav-container style="height: 100%; margin: 0;">
+  <mat-sidenav #sidenav mode="side" style="width: 240px" opened="true">
+    <app-navigation></app-navigation>
+  </mat-sidenav>
+	<main>
+    <div class="header">
+		<app-header ></app-header>
+  </div>
+		<section id="page">
+			<router-outlet></router-outlet>
+		</section>
+	</main>
+</mat-sidenav-container>

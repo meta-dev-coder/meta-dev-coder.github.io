@@ -1,0 +1,37 @@
+<div>
+<!--   <mat-carousel
+  timings="250ms ease-in"
+  [autoplay]="true"
+  interval="5000"
+  color="accent"
+  maxWidth="100%"
+  proportion="25"
+  maintainAspectRatio="true"
+  slides="20"
+  slideHeight="100%"
+  [loop]="true"
+  [hideArrows]="false"
+  [hideIndicators]="false"
+  [useKeyboard]="true"
+  [useMouseWheel]="true"
+  orientation="ltr"
+>
+  <mat-carousel-slide
+    #matCarouselSlide
+    *ngFor="let slide of slides; let i = index"
+    [hideOverlay]="true"
+  > -->
+  <lib-ngx-image-zoom
+    [thumbImage]=image
+    [fullImage]=image
+    [magnification]="1"
+    [enableScrollZoom]="true"
+    [enableLens]="true"
+    [lensWidth]="200"
+    [lensHeight]="200"
+></lib-ngx-image-zoom>
+  <p class="text">{{fileName}}</p>
+<!--   </mat-carousel-slide>
+</mat-carousel>-->
+</div>
+

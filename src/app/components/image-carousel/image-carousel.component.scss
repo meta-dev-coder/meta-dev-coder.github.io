@@ -1,0 +1,17 @@
+:host {
+  ::ng-deep {
+    .mat-dialog-container {
+    width: 400px;
+    height: 100%;
+}
+  ::ng-deep .ngxImageZoomContainer > img{
+    max-height: 380px!important;
+    object-fit: contain!important;
+}
+}
+.text {
+  text-align: center;
+  margin-top: 0.1em;
+  color: black;
+  }
+}

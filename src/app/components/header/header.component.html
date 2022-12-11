@@ -1,0 +1,54 @@
+<mat-menu #accountMenu="matMenu" [overlapTrigger]="false" xPosition="before">
+  <div style="display: flex !important;">
+     <mat-icon>account_balance</mat-icon>
+     <button mat-menu-item style="margin-top: -10px;">Account Summary</button>
+  </div>
+  <div style="display: flex !important;">
+     <mat-icon>account_balance_wallet</mat-icon>
+     <button mat-menu-item style="margin-top: -10px;">Application List</button>
+  </div>
+  <div style="display: flex !important;">
+     <mat-icon>supervisor_account</mat-icon>
+     <button mat-menu-item style="margin-top: -10px;">Team Members</button>
+  </div>
+  </mat-menu>
+  <a [matMenuTriggerFor]="accountMenu">
+     <div>
+        <mat-icon>account_circle</mat-icon>
+        SuperDNA3DLab
+     </div>
+  </a>
+  <mat-divider [vertical]="true"></mat-divider>
+  <mat-menu #browseMenu="matMenu" [overlapTrigger]="false" xPosition="before">
+  <form class="example-form">
+     <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Account</mat-label>
+        <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option.name}}
+        </mat-option>
+        </mat-autocomplete>
+     </mat-form-field>
+  </form>
+
+  </mat-menu>
+  <a [matMenuTriggerFor]="browseMenu">
+     <div>
+      <i class='fa fa-binoculars'></i>Browse Account
+     </div>
+  </a>
+  <mat-divider [vertical]="true"></mat-divider>
+  <mat-menu #appMenu="matMenu" [overlapTrigger]="false" xPosition="before">
+  <div style="display: flex !important;">
+     <button mat-menu-item >Settings</button>
+  </div>
+  <div style="display: flex !important;">
+     <button mat-menu-item >Log out</button>
+  </div>
+  </mat-menu>
+  <a [matMenuTriggerFor]="appMenu">
+     <div>
+      <mat-icon>security</mat-icon>arpana.thakur@gmail.com
+     </div>
+  </a>

@@ -1,0 +1,71 @@
+<div>
+  <mat-card class="outer-mat-card">
+    <table>
+      <tr>
+        <td>
+          <div class="flex-container">
+            <div>
+              <mat-form-field appearance="fill">
+                <mat-label>No. of similar images</mat-label>
+                <mat-select [(ngModel)]="numberOfImages">
+                  <mat-option value="3">Three</mat-option>
+                  <mat-option value="4">Four</mat-option>
+                  <mat-option value="5">Five</mat-option>
+                  <mat-option value="6">Six</mat-option>
+                  <mat-option value="7">Seven</mat-option>
+                  <mat-option value="8">Eight</mat-option>
+                  <mat-option value="9">Nine</mat-option>
+                  <mat-option value="10">Ten</mat-option>
+                  <mat-option value="11">Eleven</mat-option>
+                  <mat-option value="12" >Twelve</mat-option>
+                  <mat-option value="13" >Thirteen</mat-option>
+                  <mat-option value="14" >Fourteen</mat-option>
+                  <mat-option value="15" >Fifteen</mat-option>
+                  <mat-option value="20" >Twenty</mat-option>
+                  <mat-option value="25" >Twenty Five</mat-option>
+                  <mat-option value="30" >Thirty</mat-option>
+                  <mat-option value="35" >Thirty Five</mat-option>
+                  <mat-option value="40" >Forty</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="image-link">
+              <mat-form-field  appearance="outline">
+                <mat-label>Upload File</mat-label>
+                <input matInput type="text"  [(ngModel)]="filename">
+              </mat-form-field>
+                <input id="filereader" #imageInput
+                      type="file"
+                      accept="image/*"
+                      (change)="processFile(imageInput)">
+            </div>
+            <div class="image-link">
+              <mat-form-field  appearance="outline">
+                <mat-label>paste link</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="imageLink">
+              </mat-form-field>
+              <button mat-button class="button" (click)="loadImage()">Load</button>
+            </div>
+          </div>
+        </td>
+        <td>
+          <mat-card class="inner-mat-card">
+            <img [src]="url" >
+          </mat-card>
+          <button mat-button class="search-button" (click)="submitButton()">Search</button>
+        </td>
+      </tr>
+    </table>
+  </mat-card>
+  <div class="flex-container">
+    <mat-label><mat-icon>info</mat-icon>Your search results will be ordered by similarity score</mat-label>
+
+  </div>
+</div>
+<div class="flex-container-images">
+  <div *ngFor="let image of searchImageList">
+    <mat-card>
+      <img [src]="image" (click)="showImages(image)">
+    </mat-card>
+  </div>
+  </div>

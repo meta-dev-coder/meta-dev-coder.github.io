@@ -1,0 +1,36 @@
+<form name="login" (ngSubmit)="login()" #form="ngForm" *ngIf="!resetPass && !inviting && !reseting">
+  <img src="../../assets/SuperDNA.jpg">
+
+  <mat-form-field appearance="standard">
+      <mat-label>E-mail</mat-label>
+      <input matInput type="email" class="form-control" name="email" [(ngModel)]="email" (input)="checkFilledIn()" required/>
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" class="form-control" name="password" [(ngModel)]="password" (input)="checkFilledIn()" required/>
+  </mat-form-field>
+  <button mat-raised-button [color]="filledIn" [disabled]="filledIn !== 'primary'">Login</button>
+  <button mat-button (click)="$event.stopPropagation(); forgot();" *ngIf="!resetPass">forgot password?</button>
+</form>
+<form *ngIf="resetPass" (ngSubmit)="requestReset()">
+  <img src="../../assets/SuperDNA.jpg">
+
+  <mat-form-field appearance="standard">
+      <mat-label>E-mail</mat-label>
+      <input matInput type="email" class="form-control" name="email" [(ngModel)]="email" (input)="checkFilledIn()" required/>
+  </mat-form-field>
+  <button mat-button [color]="filledIn">Request reset</button>
+  <button mat-button (click)="$event.stopPropagation(); cancel();">Cancel</button>
+</form>
+<form *ngIf="inviting || reseting" (ngSubmit)="setPassword()">
+  <img src="../../assets/SuperDNA.jpg">
+  <mat-form-field appearance="standard">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" class="form-control" name="password" [(ngModel)]="password" required/>
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+      <mat-label>Confirm password</mat-label>
+      <input matInput type="password" class="form-control" name="confirmPassword" [(ngModel)]="confirmPassword" required/>
+  </mat-form-field>
+  <button mat-button [color]="filledIn">Set password</button>
+</form>

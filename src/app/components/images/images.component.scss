@@ -1,0 +1,26 @@
+:host {
+  mat-card {
+    height: 14em;
+    margin-left: 1em ;
+    width: 15em;
+    margin-top: 0.5em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    img{
+      object-fit: cover; /*this makes the image in src fit to the size specified below*/
+      width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+      height: 80%;
+    }
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-left: 1em;
+  }
+  .search {
+    margin-left: 2em;
+    width: 15em;;
+  }
+}

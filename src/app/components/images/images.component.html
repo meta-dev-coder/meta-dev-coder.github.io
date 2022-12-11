@@ -1,0 +1,11 @@
+<mat-form-field class="search" appearance="standard">
+  <mat-label>Search</mat-label>
+  <input matInput type="search" (ngModelChange)="SearchImages()">
+</mat-form-field>
+<div class="flex-container">
+<div *ngFor="let image of images">
+  <mat-card>
+    <img [src]="image.url" >
+  </mat-card>
+</div>
+</div>

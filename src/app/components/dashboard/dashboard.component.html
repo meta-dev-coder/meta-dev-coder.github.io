@@ -1,0 +1,92 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Usuage Summary</mat-card-title>
+    <div style="float: right">
+      <button mat-button>View Usuage Statistics</button>
+    </div>
+  </mat-card-header>
+  <h3>Search Solution</h3>
+  <h4>Current No. of Indexed Images</h4>
+  <div class="table-margin">
+    <table mat-table class="mat-elevation-z8 demo-table" [dataSource]="solutionDataSource">
+    <ng-container matColumnDef="Solutions" class="border">
+      <th mat-header-cell *matHeaderCellDef class="border">Solutions</th>
+      <td mat-cell *matCellDef="let element" class="border">{{element.Solutions}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Indexing">
+      <th mat-header-cell *matHeaderCellDef class="border">API/Hourly Ave. Indexing</th>
+      <td mat-cell *matCellDef="let element" class="border">{{element.Indexing}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Usage">
+      <th mat-header-cell *matHeaderCellDef class="border">Additional QPS Usage</th>
+      <td mat-cell *matCellDef="let element" class="border">{{element.Usage}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Purchased">
+      <th mat-header-cell *matHeaderCellDef class="border" >Purchased</th>
+      <td mat-cell *matCellDef="let element" class="border">{{element.Purchased}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="solutionDisplayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: solutionDisplayedColumns;" ></tr>
+    </table>
+    </div>
+    <h3>Accessible Tag Group</h3>
+    <h4>Fashion_attributes</h4>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Application List</mat-card-title>
+  </mat-card-header>
+
+  <div class="table-margin">
+    <table mat-table class="mat-elevation-z8 demo-table" [dataSource]="applicationDataSource">
+    <ng-container matColumnDef="Name" class="border">
+      <th mat-header-cell *matHeaderCellDef class="border">Application Name</th>
+      <td mat-cell *matCellDef="let element" class="border">{{element.Name}}</td>
+      <td mat-footer-cell *matFooterCellDef> Overall </td>
+    </ng-container>
+    <ng-container matColumnDef="TotalImages">
+      <th mat-header-cell *matHeaderCellDef class="border">Total Images</th>
+      <td mat-cell *matCellDef="let element" class="border">{{element.TotalImages}}</td>
+      <td mat-footer-cell *matFooterCellDef> 350,087 </td>
+    </ng-container>
+    <ng-container matColumnDef="TotalObjects">
+      <th mat-header-cell *matHeaderCellDef class="border">Total Objects</th>
+      <td mat-cell *matCellDef="let element" class="border">{{element.TotalObjects}}</td>
+      <td mat-footer-cell *matFooterCellDef> 350,087 </td>
+    </ng-container>
+    <ng-container matColumnDef="SearchSevenDays">
+      <th mat-header-cell *matHeaderCellDef class="border" >Searches for 7 days</th>
+      <td mat-cell *matCellDef="let element" class="border">{{element.SearchSevenDays}}</td>
+      <td mat-footer-cell *matFooterCellDef> 2,141  </td>
+    </ng-container>
+    <ng-container matColumnDef="TodaysSearch">
+      <th mat-header-cell *matHeaderCellDef class="border" >Today's Search</th>
+      <td mat-cell *matCellDef="let element" class="border">{{element.TodaysSearch}}</td>
+      <td mat-footer-cell *matFooterCellDef> 2,141  </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="applicationDisplayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: applicationDisplayedColumns;" ></tr>
+    <tr mat-footer-row *matFooterRowDef="applicationDisplayedColumns"></tr>
+    </table>
+    </div>
+</mat-card>
+<mat-tab-group>
+  <mat-tab label="Searches for last 7 days">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Searches for last 7 days</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div id="container"></div>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Recognition for last 7 days">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Recognition for last 7 days</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>
+

@@ -1,0 +1,65 @@
+
+  <div class="alignment">
+  <img class="img-height" id="logo" src="assets/SuperDNA.jpg" >
+  </div>
+  <!-- <mat-list>
+    <a mat-list-item routerLink="#"><mat-list-item><mat-icon>dashboard</mat-icon>Dashboard</mat-list-item></a>
+  </mat-list> -->
+  <mat-expansion-panel dense hideToggle  #matExpansionPanel>
+    <mat-expansion-panel-header (click)="expandPanel(matExpansionPanel)">
+      <mat-icon>dashboard</mat-icon>Dashboard
+  </mat-expansion-panel-header>
+</mat-expansion-panel>
+  <mat-accordion>
+
+  <mat-expansion-panel dense hideToggle>
+      <mat-expansion-panel-header>
+        <mat-icon>collections</mat-icon>Your Images
+      </mat-expansion-panel-header>
+      <mat-nav-list dense>
+          <a mat-list-item [routerLink]="'/images'">Browsing</a>
+          <a mat-list-item routerLink="#">Upload</a>
+          <a mat-list-item routerLink="#">Config</a>
+          <a mat-list-item routerLink="#">Status</a>
+      </mat-nav-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel dense hideToggle>
+      <mat-expansion-panel-header>
+        <mat-icon>search</mat-icon>Search Playground
+    </mat-expansion-panel-header>
+    <mat-nav-list dense>
+        <a mat-list-item [routerLink]="'/searchImages'">Search by Image</a>
+        <a mat-list-item routerLink="#">Multi-product Search</a>
+        <a mat-list-item routerLink="#">Visual Similar Recommendation</a>
+        <a mat-list-item routerLink="#">Search by Color</a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel dense hideToggle #matExpansionPanel1>
+    <mat-expansion-panel-header (click)="expandPanel(matExpansionPanel1)">
+      <mat-icon>phone_android</mat-icon>Mobile Sandbox App
+  </mat-expansion-panel-header>
+</mat-expansion-panel>
+<mat-expansion-panel dense hideToggle>
+  <mat-expansion-panel-header>
+    <mat-icon>settings</mat-icon>Integration
+  </mat-expansion-panel-header>
+  <mat-nav-list dense>
+      <a mat-list-item routerLink="#">API Integration</a>
+      <a mat-list-item routerLink="#">Client-side Integration</a>
+      <a mat-list-item routerLink="#">Tracking Integration</a>
+      <a mat-list-item routerLink="#">Tracking Log</a>
+  </mat-nav-list>
+</mat-expansion-panel>
+<mat-expansion-panel dense hideToggle>
+<mat-expansion-panel-header>
+  <mat-icon> insert_chart_outlined</mat-icon>Reports
+</mat-expansion-panel-header>
+<mat-nav-list dense>
+    <a mat-list-item routerLink="#">Usuage Statistics</a>
+    <a mat-list-item routerLink="#">Analytics</a>
+    <a mat-list-item routerLink="#">User Uploaded Images</a>
+</mat-nav-list>
+</mat-expansion-panel>
+</mat-accordion>
+
+
